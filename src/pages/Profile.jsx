@@ -2,7 +2,7 @@ import React from 'react'
 
 function Profile() {
   return (
-    <>Profile for Pho ri</>
+    <>Profile</>
   )
 }
 

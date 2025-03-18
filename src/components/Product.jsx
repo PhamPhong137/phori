@@ -2,11 +2,11 @@ import { useState } from "react"
 import { ChevronLeft, ChevronRight, Heart } from "lucide-react"
 
 const products = [
-  { id: 1, name: "Trọng phục đồn tác", price: 250000, image: "/placeholder.svg?height=200&width=150" },
-  { id: 2, name: "Product 2", price: 300000, image: "/placeholder.svg?height=200&width=150" },
-  { id: 3, name: "Product 3", price: 150000, image: "/placeholder.svg?height=200&width=150" },
-  { id: 4, name: "Product 4", price: 200000, image: "/placeholder.svg?height=200&width=150" },
-  { id: 5, name: "Product 5", price: 350000, image: "/placeholder.svg?height=200&width=150" },
+  { id: 1, name: "Trọng phục dân tộc Dao", price: 250000, image: "/public/product.jpg" },
+  { id: 2, name: "Trọng phục dân tộc Kinh", price: 300000, image: "/public/product.jpg" },
+  { id: 3, name: "Trọng phục dân tộc H'Mong", price: 150000, image: "/public/product.jpg" },
+  { id: 4, name: "Trọng phục dân tộc Thái Đỏ", price: 200000, image: "/public/product.jpg" },
+  { id: 5, name: "Trọng phục dân tộc Hoa", price: 350000, image: "/public/product.jpg" },
 ]
 
 export default function Product() {
@@ -33,7 +33,7 @@ export default function Product() {
   return (
     <section className="py-12 bg-gray-50">
       <div className="container mx-auto px-4">
-        <h2 className="text-2xl font-bold mb-8 text-center">Featured Products</h2>
+        <h2 className="text-2xl font-bold mb-8 text-center">Sản phẩm</h2>
         <div className="relative">
           <div className="flex justify-center items-center gap-4 h-[300px]">
             {products.map((product, idx) => {
@@ -50,12 +50,12 @@ export default function Product() {
                     <img 
                       src={product.image || "/placeholder.svg"}
                       alt={product.name}
-                      width={200}
-                      height={150}
+                      width={170}
+                      height={350}
                       className="w-full h-[150px] object-cover"
                     />
                     <button className="absolute top-2 right-2 text-red-500">
-                      <Heart className="w-5 h-5" />
+                      <Heart className="w-5 h-12" />
                     </button>
                   </div>
                   <div className="p-4">

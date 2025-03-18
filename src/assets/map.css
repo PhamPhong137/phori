@@ -1,0 +1,8 @@
+path {
+    fill: #ff852f ; /* Màu gốc */
+    transition: fill 0.3s ease;
+  }
+  
+  path:hover {
+    fill: #b41f11; /* Màu khi hover */
+  }

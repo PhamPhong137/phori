@@ -1,102 +1,214 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import "../assets/map.css";
 
 function Map() {
   const provinceData = [
     {
-      name: "Điện Biên",
-      description: "Tỉnh miền núi phía Tây Bắc Việt Nam",
-      products: [
-        {
-          id: 1,
-          name: "Gạo tám xoan",
-          image: "https://via.placeholder.com/100",
-        },
-        { id: 2, name: "Cà phê", image: "https://via.placeholder.com/100" },
-      ],
+      "name": "Điện Biên",
+      "description": "Tỉnh miền núi phía Tây Bắc Việt Nam, nổi tiếng với lịch sử chiến thắng Điện Biên Phủ và văn hóa các dân tộc thiểu số.",
+      "image": "https://via.placeholder.com/100",
+      "products": [
+        { "id": 1, "name": "Gấu Mông", "image": "https://via.placeholder.com/100" },
+        { "id": 2, "name": "Gấu Thái", "image": "https://via.placeholder.com/100" }
+      ]
     },
     {
-        name: "Điện Biên",
-        description: "Tỉnh miền núi phía Tây Bắc Việt Nam",
-        products: [
-          {
-            id: 1,
-            name: "Gạo tám xoan",
-            image: "https://via.placeholder.com/100",
-          },
-          { id: 2, name: "Cà phê", image: "https://via.placeholder.com/100" },
-        ],
-      },
-      {
-        name: "Hà Giang",
-        description: "Tỉnh miền núi phía Tây Bắc Việt Nam",
-        products: [
-          {
-            id: 1,
-            name: "Gạo tám xoan",
-            image: "https://via.placeholder.com/100",
-          },
-          { id: 2, name: "Cà phê", image: "https://via.placeholder.com/100" },
-        ],
-      },
-      {
-        name: "Nam Định",
-        description: "Tỉnh miền núi phía Tây Bắc Việt Nam",
-        products: [
-          {
-            id: 1,
-            name: "Gạo tám xoan",
-            image: "https://via.placeholder.com/100",
-          },
-          { id: 2, name: "Cà phê", image: "https://via.placeholder.com/100" },
-        ],
-      },
-    // Thêm dữ liệu cho các tỉnh khác
-];
+      "name": "Lào Cai",
+      "description": "Tỉnh biên giới phía Bắc, có thị trấn Sapa nổi tiếng với ruộng bậc thang và chợ phiên của người dân tộc.",
+      "image": "https://via.placeholder.com/100",
+      "products": [
+        { "id": 1, "name": "Gấu H'Mông", "image": "https://via.placeholder.com/100" },
+        { "id": 2, "name": "Gấu Dao", "image": "https://via.placeholder.com/100" }
+      ]
+    },
+    {
+      "name": "Ha Noi",
+      "description": "Thủ đô nghìn năm văn hiến của Việt Nam, nổi bật với 36 phố phường và các di tích lịch sử.",
+      "image": "https://via.placeholder.com/100",
+      "products": [
+        { "id": 1, "name": "Gấu Kinh", "image": "https://via.placeholder.com/100" },
+        { "id": 2, "name": "Gấu Tày", "image": "https://via.placeholder.com/100" }
+      ]
+    },
+    {
+      "name": "Hòa Bình",
+      "description": "Nơi sinh sống của nhiều dân tộc thiểu số, nổi tiếng với rượu cần và bản Mường.",
+      "image": "https://via.placeholder.com/100",
+      "products": [
+        { "id": 1, "name": "Gấu Mường", "image": "https://via.placeholder.com/100" },
+        { "id": 2, "name": "Gấu Thái", "image": "https://via.placeholder.com/100" }
+      ]
+    },
+    {
+      "name": "Phú Thọ",
+      "description": "Nơi phát tích của dân tộc Việt Nam, gắn liền với đền Hùng.",
+      "image": "https://via.placeholder.com/100",
+      "products": [
+        { "id": 1, "name": "Gấu Mường", "image": "https://via.placeholder.com/100" },
+        { "id": 2, "name": "Gấu Kinh", "image": "https://via.placeholder.com/100" }
+      ]
+    },
+    {
+      "name": "Tuyên Quang",
+      "description": "Tỉnh có nhiều di tích lịch sử cách mạng, nổi tiếng với lễ hội Thành Tuyên.",
+      "image": "https://via.placeholder.com/100",
+      "products": [
+        { "id": 1, "name": "Gấu Dao", "image": "https://via.placeholder.com/100" },
+        { "id": 2, "name": "Gấu Tày", "image": "https://via.placeholder.com/100" }
+      ]
+    },
+    {
+      "name": "Bắc Kạn",
+      "description": "Nơi có hồ Ba Bể và các dân tộc Tày, Nùng sinh sống lâu đời.",
+      "image": "https://via.placeholder.com/100",
+      "products": [
+        { "id": 1, "name": "Gấu Tày", "image": "https://via.placeholder.com/100" },
+        { "id": 2, "name": "Gấu Nùng", "image": "https://via.placeholder.com/100" }
+      ]
+    },
+    {
+      "name": "Cao Bằng",
+      "description": "Tỉnh biên giới có nhiều danh thắng như thác Bản Giốc và khu di tích Pác Bó.",
+      "image": "https://via.placeholder.com/100",
+      "products": [
+        { "id": 1, "name": "Gấu Nùng", "image": "https://via.placeholder.com/100" },
+        { "id": 2, "name": "Gấu Tày", "image": "https://via.placeholder.com/100" }
+      ]
+    },
+    {
+      "name": "Lạng Sơn",
+      "description": "Vùng đất biên giới với những chợ phiên sầm uất và danh lam nổi tiếng như động Tam Thanh.",
+      "image": "https://via.placeholder.com/100",
+      "products": [
+        { "id": 1, "name": "Gấu Tày", "image": "https://via.placeholder.com/100" },
+        { "id": 2, "name": "Gấu H'Mông", "image": "https://via.placeholder.com/100" }
+      ]
+    },
+    {
+      "name": "Bắc Ninh",
+      "description": "Cái nôi của dân ca quan họ và làng nghề gốm Phù Lãng.",
+      "image": "https://via.placeholder.com/100",
+      "products": [
+        { "id": 1, "name": "Gấu Quan Họ", "image": "https://via.placeholder.com/100" },
+        { "id": 2, "name": "Gấu Kinh", "image": "https://via.placeholder.com/100" }
+      ]
+    },
+    {
+      "name": "Hải Dương",
+      "description": "Vùng đất nổi tiếng với vải thiều Lục Ngạn và dân ca quan họ.",
+      "image": "https://via.placeholder.com/100",
+      "products": [
+        { "id": 1, "name": "Gấu Tày", "image": "https://via.placeholder.com/100" },
+        { "id": 2, "name": "Gấu Quan Họ", "image": "https://via.placeholder.com/100" }
+      ]
+    },
+    {
+      "name": "Quảng Ninh",
+      "description": "Nơi có vịnh Hạ Long, một trong bảy kỳ quan thiên nhiên thế giới.",
+      "image": "https://via.placeholder.com/100",
+      "products": [
+        { "id": 1, "name": "Gấu Tày", "image": "https://via.placeholder.com/100" },
+        { "id": 2, "name": "Gấu Dao", "image": "https://via.placeholder.com/100" }
+      ]
+    },
+    {
+      "name": "Hải Phòng",
+      "description": "Thành phố cảng lớn nhất miền Bắc, nổi tiếng với hoa phượng đỏ và bãi biển Đồ Sơn.",
+      "image": "https://via.placeholder.com/100",
+      "products": [
+        { "id": 1, "name": "Gấu Kinh", "image": "https://via.placeholder.com/100" },
+        { "id": 2, "name": "Gấu Dao", "image": "https://via.placeholder.com/100" }
+      ]
+    }
+  ];
+  
 
   const [hoveredProvince, setHoveredProvince] = useState(null);
   const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 });
 
+  const [scrollTop, setScrollTop] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollTop(window.scrollY || document.documentElement.scrollTop);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  document.querySelectorAll("path").forEach((path) => {
+    path.addEventListener("mouseenter", (e) => {
+      e.target.dataset.originalColor = e.target.style.fill || "ff852f"; // Lưu màu gốc
+      e.target.style.fill = "b41f11"; // Đổi màu khi hover
+    });
+
+    path.addEventListener("mouseleave", (e) => {
+      e.target.style.fill = e.target.dataset.originalColor; // Khôi phục màu gốc
+    });
+  });
   const handleMouseMove = (e) => {
     const path = e.target;
-    const provinceName = path.getAttribute("name"); // Giữ nguyên "name"
+    const provinceName = path.getAttribute("name");
     console.log(provinceName);
+    // console.log(scrollTop);
     if (!provinceName) return;
 
     // Tìm dữ liệu tỉnh dựa trên `name`
     const provinceInfo = provinceData.find((p) => p.name === provinceName);
     if (!provinceInfo) return;
-
-    const rect = path.getBoundingClientRect();
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-    setTooltipPosition({
-      x: rect.left + rect.width / 2,
-      y: rect.top - 10,
-    });
+    // const rect = path.getBoundingClientRect();
+    // console.log("xy", rect.top+" "+ rect.left);
+    // console.log("y", rect.top + window.scrollY - 5);
+    // console.log("x", rect.left + rect.width / 2);
+    // setTooltipPosition({
+    //   x: rect.left - rect.width / 2,
+    //   y: rect.top + window.scrollY - 520,
+    // });
 
     setHoveredProvince(provinceInfo); // Lưu cả object tỉnh thay vì chỉ name
   };
 
-  const handleMouseLeave = () => {
-    setHoveredProvince(null);
+  const handleMouseLeave = (e) => {
+    setTimeout(() => {
+      if (!isMouseOverTooltip) {
+        setHoveredProvince(null);
+      }
+    }, 200);
+    console.log(e.target.dataSet.name);
   };
+
+  const handleTouchStart = (e) => {
+    isMouseOverTooltip = true;
+  };
+
+  const handleTouchEnd = (e) => {
+    isMouseOverTooltip = false;
+  };
+
+  let isMouseOverTooltip = false;
   return (
     <div>
       <svg
         baseprofile="tiny"
         fill="#ff852f"
-        height="1000"
+        // height="1000"
+        width="1000"
         stroke="#ffffff"
         stroke-linecap="round"
         stroke-linejoin="round"
         stroke-width=".5"
+        // className="w-full border border-red-500"
         version="1.2"
-        viewbox="0 0 1000 1000"
-        width="1000"
+        viewBox="0 0 1000 1000"
         xmlns="http://www.w3.org/2000/svg"
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
+        onTouchStart={handleTouchStart} // Cho mobile
+        onTouchEnd={handleTouchEnd}
       >
         <g id="features">
           <path
@@ -523,34 +635,44 @@ function Map() {
       </svg>
       {hoveredProvince && (
         <div
-          className="absolute z-10 bg-white rounded-lg shadow-xl p-4 min-w-[300px]"
+          className="absolute z-10 bg-white rounded-lg shadow-xl p-4 min-w-[500px]"
+          onMouseEnter={() => (isMouseOverTooltip = true)}
+          onMouseLeave={() => {
+            isMouseOverTooltip = false;
+            setHoveredProvince(null);
+          }}
           style={{
-            left: `${tooltipPosition.x}px`,
-            top: `${tooltipPosition.y}px`,
+            left: `1000px`,
+            top: `300px`,
+            display: hoveredProvince ? "block" : "none", // Đảm bảo nó hiện khi hover
+            position: "absolute",
+            zIndex: 9999, // Đảm bảo không bị che mất
             transform: "translate(-50%, -100%)",
           }}
         >
           <div className="flex gap-4">
             {/* Province Info */}
             <div className="flex-1">
-              <h3 className="text-xl font-bold mb-2">
-                {hoveredProvince.name}
-              </h3>
+              <h3 className="text-xl font-bold mb-2">{hoveredProvince.name}</h3>
               <p className="text-gray-600 mb-4">
                 {hoveredProvince.description}
               </p>
+              <img
+                src={hoveredProvince.image || "/placeholder.svg"}
+                className="w-32 h-32 object-cover rounded-md mx-auto mb-1"
+              />
             </div>
 
             {/* Products */}
             <div className="flex-1">
-              <h4 className="font-semibold mb-2">Sản phẩm đặc trưng:</h4>
+              <h4 className="font-semibold mb-2">Sản phẩm gấu bông:</h4>
               <div className="grid grid-cols-2 gap-2">
                 {hoveredProvince.products.map((product) => (
                   <div key={product.id} className="text-center">
                     <img
                       src={product.image || "/placeholder.svg"}
                       alt={product.name}
-                      className="w-12 h-12 object-cover rounded-md mx-auto mb-1"
+                      className="w-28 h-28 object-cover rounded-md mx-auto mb-1"
                     />
                     <p className="text-sm">{product.name}</p>
                   </div>
@@ -560,10 +682,10 @@ function Map() {
           </div>
 
           {/* Tooltip Arrow */}
-          <div
+          {/* <div
             className="absolute left-1/2 bottom-0 w-4 h-4 bg-white transform rotate-45 translate-y-2 -translate-x-2"
             style={{ boxShadow: "2px 2px 2px rgba(0, 0, 0, 0.1)" }}
-          />
+          /> */}
         </div>
       )}
     </div>
