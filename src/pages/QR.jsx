@@ -72,37 +72,37 @@ export default function QR() {
         {
           title: "Trang phục truyền thống H'mông",
           text: "Trang phục truyền thống của người H'mông nổi tiếng với những hoa văn thêu tỉ mỉ và màu sắc rực rỡ. Mỗi họa tiết kể một câu chuyện về văn hóa, tín ngưỡng và đời sống hằng ngày của họ. Trang phục được làm thủ công bằng các kỹ thuật truyền thống được truyền lại qua nhiều thế hệ.",
-          img: "/public/Hmong1.jpg",
+          img: "Hmong1.jpg",
           reverse: false,
         },
         {
           title: "Trang phục truyền thống Dao",
           text: "Trang phục của người Dao đặc trưng với những chiếc khăn đội đầu màu đỏ và trang phục nhuộm chàm. Họ còn trang trí bằng những món trang sức bạc và hoa văn thêu tay đầy màu sắc, thể hiện bản sắc văn hóa và nghệ thuật của dân tộc mình.",
-          img: "/public/Dao.jpg",
+          img: "Dao.jpg",
           reverse: true,
         },
         {
           title: "Trang phục truyền thống Thái",
           text: "Trang phục của người Thái nổi bật với những thiết kế thanh lịch và kỹ thuật dệt tinh xảo. Phụ nữ thường mặc váy dài với hoa văn cầu kỳ và áo nhiều màu sắc, trong khi đàn ông mặc quần áo đơn giản cùng với những chiếc khăn đội đầu đặc trưng.",
-          img: "public/Thai1.jpg",
+          img: "Thai1.jpg",
           reverse: false,
         },
         {
           title: "Trang phục truyền thống TàyTày ",
           text: "Trang phục của người Thái nổi bật với những thiết kế thanh lịch và kỹ thuật dệt tinh xảo. Phụ nữ thường mặc váy dài với hoa văn cầu kỳ và áo nhiều màu sắc, trong khi đàn ông mặc quần áo đơn giản cùng với những chiếc khăn đội đầu đặc trưng.",
-          img: "public/Tay.png",
+          img: "Tay.png",
           reverse: true,
         },
         {
           title: "Trang phục truyền thống Khơ me",
           text: "Trang phục của người Thái nổi bật với những thiết kế thanh lịch và kỹ thuật dệt tinh xảo. Phụ nữ thường mặc váy dài với hoa văn cầu kỳ và áo nhiều màu sắc, trong khi đàn ông mặc quần áo đơn giản cùng với những chiếc khăn đội đầu đặc trưng.",
-          img: "public/kmer.jpg",
+          img: "kmer.jpg",
           reverse: !true,
         },
         {
           title: "Trang phục truyền thống Kinh ",
           text: "Trang phục của người Thái nổi bật với những thiết kế thanh lịch và kỹ thuật dệt tinh xảo. Phụ nữ thường mặc váy dài với hoa văn cầu kỳ và áo nhiều màu sắc, trong khi đàn ông mặc quần áo đơn giản cùng với những chiếc khăn đội đầu đặc trưng.",
-          img: "public/Kinh.jpg",
+          img: "Kinh.jpg",
           reverse: true,
         },
       ].map((section, index) => (
